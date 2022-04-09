@@ -7,6 +7,8 @@ Config.TimeOpen = 14 -- Opening Time
 Config.TimeClosed = 17 -- Closing Time
 Config.ClockOutDist = 40 -- 40 Seems about fair (Go outside this area on duty and it will switch you to offduty)
 
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
+
 Config.PawnItems = {
     [1] = {
         item = "goldchain",
@@ -23,5 +25,64 @@ Config.PawnItems = {
     [4] = {
         item = "10kgoldchain",
         price = math.random(500, 790)
+    },
+}
+
+Config.MeltingItems = { -- meltTime is amount of time in minutes per item
+    [1] = {
+        item = "goldchain",
+        rewards = {
+            [1] = {
+                item = "goldbar",
+                amount = 2
+            }
+        },
+        meltTime = 0.15
+    },
+    [2] = {
+        item = "diamond_ring",
+        rewards = {
+            [1] = {
+                item = "diamond",
+                amount = 1
+            },
+            [2] = {
+                item = "goldbar",
+                amount = 1
+            }
+        },
+        meltTime = 0.15
+    },
+    [3] = {
+        item = "rolex",
+        rewards = {
+            [1] = {
+                item = "diamond",
+                amount = 1
+            },
+            [2] = {
+                item = "goldbar",
+                amount = 1
+            },
+            [3] = {
+                item = "electronickit",
+                amount = 1
+            }
+        },
+        meltTime = 0.15
+    },
+    [4] = {
+        item = "10kgoldchain",
+        rewards = {
+            [1] = {
+                item = "diamond",
+                amount = 5
+            },
+            [2] = {
+                item = "goldbar",
+                amount = 1
+            }
+        },
+        meltTime = 0.15
     },
 }
